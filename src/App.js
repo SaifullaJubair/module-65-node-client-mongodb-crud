@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import AddUsers from './Components/AddUsers/AddUsers';
@@ -19,7 +18,8 @@ function App() {
     },
     {
       path: '/update/:id',
-      element: <Update></Update>
+      element: <Update></Update>,
+      loader: ({ params }) => fetch(`http://localhost:5000/users/${params.id}`)
     }
   ])
   return (

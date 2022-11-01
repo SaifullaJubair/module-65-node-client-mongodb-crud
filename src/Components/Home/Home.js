@@ -31,8 +31,11 @@ const Home = () => {
             {
                displayUsers.map(user => <p
                   key={user._id}
-               >{user.name} {user.email} <button
-                  onClick={() => handleDelete(user)}>X</button>
+               >{user.name} {user.email}
+                  <Link to={`/update/${user._id}`}><button>Update</button></Link>
+                  <button
+                     onClick={() => handleDelete(user)}>X
+                  </button>
                </p>)
             }
          </div>
